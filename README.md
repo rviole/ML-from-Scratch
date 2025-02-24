@@ -5,7 +5,7 @@ A project to train a single neuron from scratch to learn a linear function. This
 
 ## Repository Structure
 
-### LinearRegression
+### `LinearRegression`
 
 | Filename | Description | Link |
 |----------|-------------|------|
