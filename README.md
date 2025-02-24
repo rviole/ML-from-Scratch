@@ -5,9 +5,9 @@ A project to train a single neuron from scratch to learn a linear function. This
 
 ## Repository Structure
 
-### `LinearRegression`
+### `> ./LinearRegression/`
 
 | Filename | Description | Link |
 |----------|-------------|------|
-| `using-covariance-and-variance.ipynb` | Notebook demonstrating linear regression using covariance and variance to find the slope and intercept. | [Read More](./LinearRegression/using-covariance-and-variance.ipynb) |
+| `using-covariance-and-variance.ipynb` | Notebook demonstrating linear regression using covariance and variance to find the slope and intercept. | [Read More](./LinearRegression/using-covariance-and-variance.md) |
 

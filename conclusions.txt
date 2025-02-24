@@ -1,0 +1,4 @@
+1.  When we try to adjust SLOPE in y=kx, even-updating (over-training) the SLOPE, it doesn't overshoot or move against the found minima.
+2.  However, when we try to do the same (Over train the slope, after it already found a minima), in y=kx+b, the K overshoots the minima. If trained further, it slowly reverts back to it. 
+    The reason might be: The loss funciton that we rely on, depends on only K in the first example (y = kx), but is affected by `b` as well in the second example (y = kx+b)
+
