@@ -6,15 +6,13 @@ Variance measures how **spread out** the values of a dataset are. It tells us ho
 
 #### **Formula:**  
 
-\[
-\text{Var}(X) = \frac{\sum (x_i - \bar{x})^2}{n}
-\]
+$$ \text{Var}(X) = \frac{\sum (x_i - \bar{x})^2}{n} $$
 
 #### **Breakdown of the Formula:**  
 1. Take each value of \(X\) and **subtract the mean** of \(X\) → \((x_i - \bar{x})\).  
 2. **Square** each difference → \((x_i - \bar{x})^2\) (to avoid canceling out negative values).  
 3. Sum up all squared differences.  
-4. Divide by the number of values **\(n\)** (or \(n-1\) in statistics for an unbiased estimate).  
+4. Divide by the number of values **\(n\)** (or \(n-1\) for unbiased estimate).  
 
 #### **Why do we use variance?**  
 - It **quantifies** how spread out the dataset is.  
@@ -32,16 +30,14 @@ Covariance measures the **relationship** between two variables \(X\) and \(Y\). 
 
 #### **Formula:**  
 
-\[
-\text{Cov}(X, Y) = \frac{\sum (x_i - \bar{x}) (y_i - \bar{y})}{n}
-\]
+$$ \text{Cov}(X, Y) = \frac{\sum (x_i - \bar{x}) (y_i - \bar{y})}{n} $$
 
 #### **Breakdown of the Formula:**  
 1. Take each \(X\) and **subtract the mean of \(X\)** → \((x_i - \bar{x})\).  
 2. Take each \(Y\) and **subtract the mean of \(Y\)** → \((y_i - \bar{y})\).  
 3. Multiply the two differences: \((x_i - \bar{x}) (y_i - \bar{y})\).  
 4. Sum up all these products.  
-5. Divide by **\(n\)** (or \(n-1\) in statistics).  
+5. Divide by **\(n\)** (or \(n-1\) for unbiased estimate).  
 
 #### **Why don’t we square it like variance?**  
 - In variance, we square differences to **avoid negative canceling**.  
@@ -56,9 +52,7 @@ Covariance measures the **relationship** between two variables \(X\) and \(Y\). 
 ### **3️⃣ How Do We Use Covariance and Variance to Find the Slope?**  
 We use the formula:
 
-\[
-k ~~ \frac{\text{Cov}(X, Y)}{\text{Var}(X)}
-\]
+$$ k = \frac{\text{Cov}(X, Y)}{\text{Var}(X)} $$
 
 #### **Why does this formula give us the slope?**  
 - The numerator **(Cov(X, Y))** tells us how **\(X\) and \(Y\) move together**.  
@@ -68,37 +62,27 @@ k ~~ \frac{\text{Cov}(X, Y)}{\text{Var}(X)}
 ### **4️⃣ How Do We Find the Intercept?**  
 Once we have the slope \(k\), we find the intercept \(b\):  
 
-\[
-b = \bar{y} - k \bar{x}
-\]
+$$ b = \bar{y} - k \bar{x} $$
 
 #### **Why does this formula work?**  
 - We already know that **for a straight line**, the equation is:  
 
-  \[
-  y = kx + b
-  \]
+  $$ y = kx + b $$
 
 - We want to find \(b\), so we substitute the **average values** (\(\bar{x}, \bar{y}\)) as a representative point:  
 
-  \[
-  \bar{y} = k\bar{x} + b
-  \]
+  $$ \bar{y} = k\bar{x} + b $$
 
 - Solving for \(b\):  
 
-  \[
-  b = \bar{y} - k\bar{x}
-  \]
+  $$ b = \bar{y} - k\bar{x} $$
 
 ---
 
 ### **5️⃣ Why Not Just Use "Rise Over Run" on Two Points?**  
 You **can** use two points to find the slope:
 
-\[
-k = \frac{y_2 - y_1}{x_2 - x_1}
-\]
+$$ k = \frac{y_2 - y_1}{x_2 - x_1} $$
 
 #### **So why use covariance and variance?**  
 ✅ If you pick just **two points**, they might be **outliers** → unreliable slope.  
@@ -109,12 +93,10 @@ k = \frac{y_2 - y_1}{x_2 - x_1}
 ### **6️⃣ Final Linear Regression Formula**  
 After calculating **\(k\) and \(b\)**, our equation is:  
 
-\[
-y = kx + b
-\]
+$$ y = kx + b $$
 
 Where:  
-- \( k ~~ \frac{\text{Cov}(X, Y)}{\text{Var}(X)} \) → slope  
+- \( k = \frac{\text{Cov}(X, Y)}{\text{Var}(X)} \) → slope  
 - \( b = \bar{y} - k\bar{x} \) → intercept  
 
 ✅ This **minimizes errors** and fits the best possible line to the data!  
@@ -124,11 +106,11 @@ Where:
 ### **🔥 Summary Table**
 | Concept | Formula | Meaning |
 |---------|---------|---------|
-| **Variance (\(\text{Var}(X)\))** | \( \frac{\sum (x_i - \bar{x})^2}{n} \) | Measures spread of \(X\) |
-| **Covariance (\(\text{Cov}(X, Y)\))** | \( \frac{\sum (x_i - \bar{x}) (y_i - \bar{y})}{n} \) | Measures relationship between \(X, Y\) |
-| **Slope (\(k\))** | \( \frac{\text{Cov}(X, Y)}{\text{Var}(X)} \) | Rate of change of \(Y\) with respect to \(X\) |
-| **Intercept (\(b\))** | \( \bar{y} - k\bar{x} \) | Where the line crosses \(Y\)-axis |
-| **Linear Regression Equation** | \( y = kx + b \) | Best fit line for the data |
+| **Variance (\(\text{Var}(X)\))** | $$ \frac{\sum (x_i - \bar{x})^2}{n} $$ | Measures spread of \(X\) |
+| **Covariance (\(\text{Cov}(X, Y)\))** | $$ \frac{\sum (x_i - \bar{x}) (y_i - \bar{y})}{n} $$ | Measures relationship between \(X, Y\) |
+| **Slope (\(k\))** | $$ \frac{\text{Cov}(X, Y)}{\text{Var}(X)} $$ | Rate of change of \(Y\) with respect to \(X\) |
+| **Intercept (\(b\))** | $$ \bar{y} - k\bar{x} $$ | Where the line crosses \(Y\)-axis |
+| **Linear Regression Equation** | $$ y = kx + b $$ | Best fit line for the data |
 
 ---
 
@@ -138,3 +120,5 @@ Where:
 ✅ **Slope** is found by dividing covariance by variance.  
 ✅ **Intercept** is found using the mean values.  
 ✅ This method **uses all data points** for a more reliable fit compared to "rise over run" with just two points.  
+
+🚀 **Does this make sense? Anything unclear?** 😃
