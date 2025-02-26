@@ -1,6 +1,6 @@
 ## **🔷 Variance, Covariance, and Linear Regression: Full Summary**  
 
-### **1️⃣ Variance ** 📊  
+### **1️⃣ Variance** 📊  
 Variance measures how **spread out** the values of a dataset are. It tells us how much the values of a single variable deviate from the mean.  
 
 **Formula:**  
