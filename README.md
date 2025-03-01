@@ -1,5 +1,5 @@
 # Machine Learning Projects From Scratch
-A project to train a single neuron from scratch to learn a linear function. This serves as a foundational step for more complex neural network models.
+A set of Machine Learning Projects developer from scratch. Serves as a Portfolio project.
 
 # 🚧 In progress ...
 
