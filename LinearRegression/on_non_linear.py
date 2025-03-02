@@ -22,15 +22,22 @@ def show_history(history: dict):
 
 
 TARGET_K = 2
-TARGET_B = 3
 epoch = 0
 
 x = np.arange(-10, 10, 0.1)
-y = x * TARGET_K + TARGET_B
+y = x**2 * TARGET_K
+
+
+derivative = 4 * x
+
+# plt.plot(x, y)
+# plt.plot(x, derivative)
+# plt.show()
+# exit(1)
 
 
 class MomentumOptimizer:
-    def __init__(self, lr=0.001, beta=0.98):
+    def __init__(self, lr=0.0001, beta=0.9):
         # WARNING - LR in this implementation is constant
         self.lr = lr
         self.beta = beta
@@ -39,71 +46,51 @@ class MomentumOptimizer:
 
     def step(self, gradient):
         self.previous_momentum = self.momentum
-        self.momentum = (self.previous_momentum * beta) + (gradient * self.lr)
+        self.momentum = (self.previous_momentum * self.beta) + (gradient * self.lr)
 
         return self.momentum
 
 
-lr_k = 0.0001  # learning rate
-lr_b = 0.001  # learning rate
-beta = 0.95  # how much of momentum to keep
+lr_k = 0.000005  # learning rate
 
-k_optimizer = MomentumOptimizer(lr=lr_k, beta=beta)
-b_optimizer = MomentumOptimizer(lr=lr_b, beta=beta)
+k_optimizer = MomentumOptimizer(lr=lr_k)
 
 history = {
     "epoch": [],
     "k_velocity": [],
     "k_previous_velocity": [],
-    "b_velocity": [],
-    "b_previous_velocity": [],
     "k_gradient": [],
-    "b_gradient": [],
     "k": [],
-    "b": [],
     "loss": [],
     "k_lr": [],
-    "b_lr": [],
 }
 
 MAX_EPOCHS = 1500
 # initial k value
 initial_k = -5
-initial_b = -5
-
 k = initial_k
-b = initial_b
 
 
 while True:
-    y_pred = x * k + b
+    y_pred = x**2 * k
     error = y - y_pred
     loss = np.mean(error**2)
 
     if loss < 0.0001 or epoch > MAX_EPOCHS:
         break
 
-    k_gradient = -2 * np.mean(x * error)
-    b_gradient = -2 * np.mean(error)
-
+    k_gradient = -2 * np.mean(x**2 * error)
     k = k - k_optimizer.step(k_gradient)
-    b = b - b_optimizer.step(b_gradient)
-
     lr_k = lr_k * 1.001
-    lr_b = lr_b * 1.001
 
     history["epoch"].append(epoch)
     history["k_velocity"].append(float(f"{k_optimizer.momentum:.2f}"))
     history["k_previous_velocity"].append(float(f"{k_optimizer.previous_momentum:.2f}"))
-    history["b_velocity"].append(float(f"{b_optimizer.momentum:.2f}"))
-    history["b_previous_velocity"].append(float(f"{b_optimizer.previous_momentum:.2f}"))
     history["k_gradient"].append(float(f"{k_gradient:.2f}"))
-    history["b_gradient"].append(float(f"{b_gradient:.2f}"))
     history["k"].append(float(f"{k:.2f}"))
-    history["b"].append(float(f"{b:.2f}"))
     history["loss"].append(float(f"{loss:.2f}"))
     history["k_lr"].append(float(f"{lr_k:.2f}"))
-    history["b_lr"].append(float(f"{lr_b:.2f}"))
+
     epoch += 1
 
 
@@ -156,31 +143,6 @@ ax[1, 0].grid()
 ax[1, 0].set_title("Loss vs k")
 ax[1, 0].set_xlabel("k")
 ax[1, 0].set_ylabel("Loss")
-
-# 4th plot
-ax[1, 1].plot(history["b"], history["loss"], label="Loss", color="black", lw=2)
-ax[1, 1].axvline(x=TARGET_B, lw=3, label=f"Target b: {TARGET_B}", color="blue")
-ax[1, 1].plot(
-    history["b"][0],
-    history["loss"][0],
-    marker="o",
-    color="green",
-    label=f"Start: b={initial_b}",
-    markersize=10,
-)
-ax[1, 1].plot(
-    history["b"][-1],
-    history["loss"][-1],
-    marker="o",
-    color="red",
-    label=f"End: b={history['b'][-1]}",
-    markersize=10,
-)
-ax[1, 1].legend()
-ax[1, 1].grid()
-ax[1, 1].set_title("Loss vs b")
-ax[1, 1].set_xlabel("b")
-ax[1, 1].set_ylabel("Loss")
 
 
 plt.tight_layout()
