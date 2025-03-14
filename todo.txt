@@ -1,0 +1,4 @@
+1. need to make a single Optimizer class that manage a set of optimizers for each parameter 
+2. Make the classes in the following way: pass an instance - not a class directly
+model = Model(DenseLayer, MSE(), Adam())
+3. add model.compile
