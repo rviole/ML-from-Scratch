@@ -45,9 +45,9 @@
 
 ## Results:
 
-<div style="width:100%; display:flex; flex-direction:column; align-items:center; gap:20px;">
+<div align="center">
 
-<h2>Successful Training</h2>
+<h3>Successful Training</h3>
 
 <img src='./img/chart-1.png' style='width:60%' alt='Loss vs Epoch'>
 

@@ -53,12 +53,12 @@ Introducing a Learning Scheduler
 ## Results:
 
 
-<div style="width:100%; display:flex; flex-direction:column; align-items:center; gap:20px;">
+<div align="center">
 
-<h2>Error due to Careless parameter tuning</h2>
+<h3>Error due to Careless parameter tuning</h3>
 <img src='./img/error.png' style='width:60%' alt='Loss vs Epoch'>
 
-<h2>Successful Training</h2>
+<h3>Successful Training</h3>
 
 <img src='./img/chart-1.png' style='width:60%' alt='Loss vs Epoch'>
 
