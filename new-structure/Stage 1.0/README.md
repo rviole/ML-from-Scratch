@@ -1,8 +1,12 @@
 # Stage 1.0
 
+
+## Content:
+
+
 ## TL;DR
 
-### Info
+### 📘 Info
 
 - Linear Regression
 - **Input** Features: **1**
@@ -10,13 +14,14 @@
 - Loss: `MSE`
 - Optimizer: None
 
-### Limitations
+### ⚠️ Limitations
 
-- NO dedicated **Optimizer** 
+- NO dedicated **Optimizer**
+- Constant Learning Rate
 - Manual weight update `w = w - gradient`
 - NO batch support
 
-## Implemntation
+## 🔧 Implemntation
 
 ### _Content_:
 
@@ -32,15 +37,22 @@
 2. matplotlib
 3. scikit-learn
 
-## Results:
+## 😎 Future Improvements :
 
+- ⚠️ Adding an Optimizer with Dynamic Learning Rate  
+    - Constant Learning Rate might be okay in simple tasks like linear regression but will inevitably fail in more complex tasks.
+
+
+## Results:
 
 <div style="width:100%; display:flex; flex-direction:column; align-items:center; gap:20px;">
 
-<img src='./img/chart-1.png' style='width:80%' alt='Loss vs Epoch'>
+<h2>Successful Training</h2>
+
+<img src='./img/chart-1.png' style='width:60%' alt='Loss vs Epoch'>
 
 <img src='./img/chart-2.png' style='width:80%' alt='Parameters and Gradients vs Epoch'>
 
-<img src='./img/chart-3.png' style='width:80%' alt='Predictions on Test Data'>
+<img src='./img/chart-3.png' style='width:60%' alt='Predictions on Test Data'>
 
 </div>
