@@ -20,6 +20,7 @@ Introducing a Learning Scheduler
 - **Output** Features: **1**
 - Loss: `MSE`
 - Optimizer: `Custom with Learning Rate Scheduler` 
+- Activation: `Linear`
 
 ### ⚠️ Limitations
 
@@ -56,7 +57,7 @@ Introducing a Learning Scheduler
 <div align="center">
 
 <h3>Error due to Careless parameter tuning</h3>
-<img src='./img/error.png' style='width:60%' alt='Loss vs Epoch'>
+<img src='./img/error.png' style='width:60%' alt='ERROR Loss vs Epoch'>
 
 <h3>Successful Training</h3>
 

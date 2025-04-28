@@ -13,6 +13,7 @@
 - **Output** Features: **1**
 - Loss: `MSE`
 - Optimizer: None
+- Activation: `Linear`
 
 ### ⚠️ Limitations
 

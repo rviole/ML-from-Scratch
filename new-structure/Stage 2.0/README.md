@@ -1,31 +1,27 @@
 # Stage 1.2
 
-Introducing Momentum to Optimizers
-- Using Moving Average of gradients
-
 ## Content:
-
 
 ## TL;DR
 
 ### 🔑 Key Changes
 
-- Momentum Based Optimizer
-- Multi Input: **2**
+- Added Adam Optimizer
+- Added Relu activation
+- Sequential model (2 layers)
+- Non-linear problem
 
 ### 📘 Info
 
 - Linear Regression
-- **Input** Features: **2**
+- **Layers**: **2**
+- **Input** Features: **1**
 - **Output** Features: **1**
 - Loss: `MSE`
-- Optimizer: `Custom Momentum-based` 
-- Activation: `Linear`
+- Optimizer: `Adam`
+- Activation: `ReLU`
 
 ### ⚠️ Limitations
-- Constant Learning Rate
-    - The first Moving Average mainly scales gradients. It is needed to implement the second one to scale the learning rate.
-
 
 ## 🔧 Implemntation
 
@@ -36,7 +32,7 @@ Introducing Momentum to Optimizers
 3. Pre-Training Setup
 4. Training
 5. Evaluation & Visualization
- 
+
 ### _Requirements_:
 
 1. numpy
@@ -44,12 +40,8 @@ Introducing Momentum to Optimizers
 3. scikit-learn
 
 ## 😎 Future Improvements:
-- Optimizer: Add Second Moving Average
-- Optimizer: Add Bias Correction
-- Structure: Add Activation
 
 ## Results:
-
 
 <div align="center">
 
@@ -59,6 +51,5 @@ Introducing Momentum to Optimizers
 <h3>Successful Training</h3>
 <img src='./img/chart-1.png' style='width:60%' alt='Loss vs Epoch'>
 <img src='./img/chart-2.png' style='width:60%' alt='Predictions on Test Data'>
-
 
 </div>
