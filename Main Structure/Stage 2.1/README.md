@@ -6,15 +6,14 @@
 
 ### 🔑 Key Changes
 
-- Added Adam Optimizer
-- Added Relu activation
-- Sequential model (2 layers)
+- `HE` initialization
+- Sequential model (3 layers)
 - Non-linear problem
 
 ### 📘 Info
 
 - Linear Regression
-- **Layers**: **2**
+- **Layers**: **3**
 - **Input** Features: **1**
 - **Output** Features: **1**
 - Loss: `MSE`
@@ -22,8 +21,6 @@
 - Activation: `ReLU`
 
 ### ⚠️ Limitations
-
-- Bad weight initialization
 
 ## 🔧 Implemntation
 
@@ -43,7 +40,7 @@
 
 ## 😎 Future Improvements:
 
-- Implement HE initialization
+- Make Scalable Model
 
 ## Results:
 
@@ -51,6 +48,7 @@
 
 <h3>Dataset</h3>
 <img src='./img/Dataset.png' style='width:60%' alt='Dataset'>
+<img src='./img/Testing-data.png' style='width:60%' alt='Train & Test Dataset'>
 
 <h3>Successful Training</h3>
 <img src='./img/chart-1.png' style='width:60%' alt='Loss vs Epoch'>

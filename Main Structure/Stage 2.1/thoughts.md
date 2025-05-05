@@ -1,0 +1,1 @@
+No way😭. I used 3 layers of neurons, each with relu activation. All of my weights has been initialized as positive or 0, and half of my dataset contained negative values. It literally means that ReLU killed so many neurons, and training went poor. An important thing is to initialize weights and biases properly.
